@@ -58,8 +58,7 @@ var point = {
 
 var point3d = Object.create(point);
  
-point3d.init = function(x, y, z)
-{
+point3d.init = function(x, y, z) {
     point.init.call(this, x, y);
     this.z = (typeof z === 'undefined' || z === null) ? 0 : z;
 }

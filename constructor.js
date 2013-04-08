@@ -5,15 +5,13 @@
 */
 
 // Construcors are just functions
-var Point = function(x, y)
-{
+var Point = function(x, y) 
     this.x = x;
     this.y = y;
 }
 
 // Put "methods" on the prototype property of the function
-Point.prototype.translate = function(x, y)
-{
+Point.prototype.translate = function(x, y) {
     this.x += x;
     this.y += y;
 }
@@ -26,8 +24,7 @@ point.translate(5, 6);
 /*
     I loves me some inheritance!
 */
-var Point3d = function(x, y, z)
-{
+var Point3d = function(x, y, z) {
     Point.call(this, x, y);
     this.z = z;
 }
@@ -36,8 +33,7 @@ Point3d.prototype = new Point();
 // OR
 Point3d.prototype = Object.create(Point.prototype); // probably better
  
-Point3d.prototype.translate = function(x, y, z)
-{
+Point3d.prototype.translate = function(x, y, z) {
     Point.prototype.translate.call(this, x, y);
     this.z += z;
 }
